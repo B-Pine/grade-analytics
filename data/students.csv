@@ -1,0 +1,4 @@
+student_id,name,major,year,course_code,course_name,credits,semester,score
+S001,Aline Uwase,Computer Science,2,CS201,Data Structures,4,2025-S1,87.5
+S001,Aline Uwase,Computer Science,2,MA101,Calculus I,3,2025-S1,72.0
+S002,Eric Mugisha,Economics,1,EC101,Microeconomics,3,2025-S1,91.0
