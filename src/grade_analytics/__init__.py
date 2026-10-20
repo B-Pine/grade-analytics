@@ -1,3 +1,1 @@
-"""Student Grade Analytics Tool."""
-
-__version__ = "0.1.0"
+"""Grade Analytics: process student records and generate grade reports."""
