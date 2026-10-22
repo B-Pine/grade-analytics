@@ -18,7 +18,7 @@ class Grade:
         score: Numeric score between 0 and 100 inclusive.
 
     Raises:
-        InvalidScoreError: If the score is outside the 0–100 range.
+        InvalidScoreError: If the score is outside the 0 - 100 range.
 
     Example:
         >>> cs = Course("CS201", "Data Structures", 4)
