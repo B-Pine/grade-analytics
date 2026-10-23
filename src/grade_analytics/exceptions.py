@@ -18,3 +18,7 @@ class DataFileError(GradeAnalyticsError):
 
 class InvalidRecordError(GradeAnalyticsError):
     """Raised when a CSV row has missing or invalid values."""
+
+
+class InsufficientDataError(GradeAnalyticsError):
+    """Raised when a calculation needs at least one value but got none."""

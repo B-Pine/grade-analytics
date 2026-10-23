@@ -1,4 +1,4 @@
-"""Computations over student data: aggregations and statistics."""
+"""Computations over student data: aggregations, statistics and rankings."""
 
 from .aggregators import (
     grade_distribution,
@@ -8,6 +8,8 @@ from .aggregators import (
     rolling_average,
     student_trend,
 )
+from .ranking import rank_students
+from .stats import mean, median, mode, percentile_rank
 
 __all__ = [
     "grade_distribution",
@@ -16,4 +18,9 @@ __all__ = [
     "rank_by_average",
     "rolling_average",
     "student_trend",
+    "rank_students",
+    "mean",
+    "median",
+    "mode",
+    "percentile_rank",
 ]
