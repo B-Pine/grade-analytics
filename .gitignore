@@ -13,3 +13,4 @@ htmlcov/
 .idea/
 .DS_Store
 *.egg-info/
+summary.json

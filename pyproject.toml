@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "grade-analytics"
 version = "0.1.0"
 description = "Process student grade records from CSV and generate JSON analytics reports."
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
 
