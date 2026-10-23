@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-10-23T09:21:27+00:00",
+  "source_file": "students.csv",
+  "total_students": 60,
+  "overall_statistics": {
+    "count": 613,
+    "mean": 75.1,
+    "median": 75.0,
+    "mode": [
+      68.5,
+      72.0
+    ],
+    "min": 38.0,
+    "max": 100.0
+  },
+  "grade_distribution": {
+    "A": 70,
+    "B": 151,
+    "C": 188,
+    "D": 147,
+    "F": 57
+  },
+  "majors": {
+    "Business": {
+      "student_count": 15,
+      "statistics": {
+        "count": 153,
+        "mean": 74.71,
+        "median": 74.5,
+        "mode": [
+          85.5
+        ],
+        "min": 47.0,
+        "max": 100.0
+      }
+    },
+    "Computer Science": {
+      "student_count": 10,
+      "statistics": {
+        "count": 103,
+        "mean": 74.11,
+        "median": 75.0,
+        "mode": [
+          63.5,
+          68.5,
+          69.0,
+          72.0,
+          75.0,
+          75.5,
+          78.0,
+          80.5,
+          84.0,
+          85.0
+        ],
+        "min": 38.0,
+        "max": 100.0
+      }
+    },
+    "Economics": {
+      "student_count": 14,
+      "statistics": {
+        "count": 143,
+        "mean": 77.77,
+        "median": 77.0,
+        "mode": [
+          86.0
+        ],
+        "min": 42.5,
+        "max": 100.0
+      }
+    },
+    "Mathematics": {
+      "student_count": 21,
+      "statistics": {
+        "count": 214,
+        "mean": 74.08,
+        "median": 73.5,
+        "mode": [
+          70.0,
+          72.5,
+          82.5
+        ],
+        "min": 48.0,
+        "max": 100.0
+      }
+    }
+  },
+  "top_performers": [
+    {
+      "rank": 1,
+      "student_id": "S003",
+      "name": "Grace Nkurunziza",
+      "major": "Computer Science",
+      "average": 95.88,
+      "percentile": 99.17,
+      "trend": [
+        99.5,
+        95.0,
+        95.17,
+        92.5,
+        95.67,
+        96.0,
+        98.83,
+        96.67
+      ]
+    },
+    {
+      "rank": 2,
+      "student_id": "S002",
+      "name": "Patrick Mukamana",
+      "major": "Mathematics",
+      "average": 93.05,
+      "percentile": 97.5,
+      "trend": [
+        90.5,
+        91.75,
+        93.5,
+        89.5,
+        91.83,
+        90.83,
+        97.17,
+        96.33,
+        98.33,
+        93.33
+      ]
+    },
+    {
+      "rank": 3,
+      "student_id": "S037",
+      "name": "Fabrice Mukamana",
+      "major": "Economics",
+      "average": 92.6,
+      "percentile": 95.83,
+      "trend": [
+        97.5,
+        98.75,
+        98.5,
+        94.83,
+        94.83,
+        92.5,
+        93.17,
+        91.0,
+        89.0,
+        88.17
+      ]
+    },
+    {
+      "rank": 4,
+      "student_id": "S019",
+      "name": "Olivier Uwase",
+      "major": "Economics",
+      "average": 91.65,
+      "percentile": 94.17,
+      "trend": [
+        91.5,
+        90.75,
+        93.83,
+        93.33,
+        94.5,
+        90.0,
+        91.33,
+        91.17,
+        92.67,
+        90.33
+      ]
+    },
+    {
+      "rank": 5,
+      "student_id": "S038",
+      "name": "Ange Ineza",
+      "major": "Mathematics",
+      "average": 90.5,
+      "percentile": 92.5,
+      "trend": [
+        92.5,
+        87.0,
+        89.0,
+        89.83,
+        91.0,
+        89.5,
+        87.5,
+        90.83,
+        93.0
+      ]
+    }
+  ]
+}
