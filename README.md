@@ -187,28 +187,6 @@ Shortened to one major and one top performer:
 
 The full structure is defined in `src/grade_analytics/schemas/report.py`.
 
-## Project structure
-
-```
-grade-analytics/
-├── src/grade_analytics/
-│   ├── exceptions.py          # all custom errors
-│   ├── models/                # Course, Grade, Student, RankingEntry
-│   ├── schemas/               # TypedDicts for the JSON report
-│   ├── file_io/               # csv_reader.py, json_writer.py
-│   ├── analytics/             # aggregators.py, stats.py, ranking.py
-│   ├── reports/               # summary.py: builds the report
-│   ├── cli.py                 # command-line entry point
-│   └── __main__.py            # enables python -m grade_analytics
-├── tests/                     # mirrors src/, one folder per package
-├── scripts/                   # dataset generator, memory comparison
-├── data/students.csv          # sample dataset
-├── pyproject.toml
-└── requirements.txt
-```
-
-Each package has one responsibility, and dependencies flow in one direction only: `models` depends on nothing; `analytics` and `file_io` build on `models`; `reports` uses `analytics`; `cli` ties everything together. Nothing imports from a layer above it, which prevents circular imports and keeps each layer testable on its own. The report schemas live in their own package so the JSON writer depends on the report's shape, not on how it is computed.
-
 ## Data model
 
 | Class | Kind | Key decisions |
@@ -298,19 +276,7 @@ pytest           # 113 tests
 mypy             # strict type checking of src/
 ```
 
-The test suite mirrors the `src/` layout and covers:
-
-- **Models:** letter-grade boundaries, score validation, immutability, hashability, `slots` and independent grade lists.
-- **Collections:** one group of tests per collection type, including their special behaviours (missing `Counter` keys are `0`, unknown `defaultdict` keys give `[]`, the `deque` window slides).
-- **Statistics:** results compared against Python's `statistics` module on 10 seeded random datasets, plus edge cases.
-- **Ranking:** ties, near-equal floats, percentiles and named-tuple unpacking.
-- **File I/O:** every error path: missing file, missing columns, empty and invalid values with line numbers, non-UTF-8 files and permission errors (simulated with `monkeypatch`).
-- **Reports:** the report's keys match the `TypedDict` schema exactly; empty input produces a valid report.
-- **CLI:** exit codes, output to stdout versus stderr, and argument validation.
-- **Sample data:** at least 50 students, all with grades, across several majors and semesters.
-- **Docstrings:** every `>>>` example in the docstrings runs as a test.
-
-All tests use temporary folders (`tmp_path`) and never touch the real `data/` or `reports/` folders.
+The test suite mirrors the `src/` layout 
 
 ## Limitations and future improvements
 
