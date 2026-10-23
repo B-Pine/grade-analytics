@@ -13,6 +13,10 @@ class Course:
         code: Unique course code, e.g. "CS201".
         name: Human-readable course name.
         credits: Number of credit hours.
+        
+    Example:
+        >>> Course("CS201", "Data Structures", 4)
+        Course(code='CS201', name='Data Structures', credits=4)
     """
 
     code: str

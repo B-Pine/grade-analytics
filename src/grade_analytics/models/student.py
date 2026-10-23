@@ -20,6 +20,7 @@ class Student:
         grades: Grades obtained so far. Each student gets its own list.
 
     Example:
+        >>> from grade_analytics.models import Course, Grade
         >>> cs = Course("CS201", "Data Structures", 4)
         >>> s = Student("S001", "Aline", "CS", 2, [Grade(cs, "2025-S1", 90)])
         >>> s.average()
