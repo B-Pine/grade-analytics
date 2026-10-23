@@ -4,7 +4,7 @@ A command-line tool and Python library that reads student grade records from CSV
 
 Built for the **Python Advanced** module to practise the `collections` module, `dataclasses`, type hints, `pathlib` and file I/O with context managers.
 
-![Tool running on the sample dataset](docs/screenshot.png)
+![Tool running on the sample dataset](docs/Screenshot.png)
 
 ## Features
 
