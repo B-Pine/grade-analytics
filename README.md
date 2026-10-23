@@ -258,34 +258,30 @@ The library raises specific errors and never prints. The CLI is the single place
 
 ## Collection performance notes
 
-Generated with `python scripts/compare_memory.py` (Python 3.12, Linux). Numbers vary by machine and Python version.
+Generated with `python scripts/compare_memory.py` (Python 3.12, Windows). Numbers vary by machine and Python version.
 
 ### Storing 100,000 student records
 
 | Representation | Total memory | Per record | vs dict |
 |---|---|---|---|
 | `dict` | 18.3 MB | 191 bytes | 100% |
-| `dataclass` | 9.9 MB | 104 bytes | 54% |
-| `namedtuple` | 8.4 MB | 88 bytes | 46% |
+| `dataclass` | 10.7 MB | 112 bytes | 58% |
+| `namedtuple` | 9.2 MB | 96 bytes | 50% |
 | `dataclass(slots=True)` | 6.9 MB | 72 bytes | 38% |
-
-A `dict` carries its own hash table for every record. A regular dataclass still stores fields in a per-instance `__dict__`. A named tuple stores fields in a fixed-size tuple. `slots=True` replaces `__dict__` with fixed slots, which makes it the leanest option, about **62% smaller than dicts**, while keeping named, typed fields. This is why every model in the project uses `slots=True`.
 
 ### Summing 1,000,000 scores
 
 | Approach | Peak memory |
 |---|---|
 | list comprehension `sum([...])` | 30.9 MB |
-| generator expression `sum(...)` | 0.5 KB |
-
-A list holds every value in memory at once; a generator produces one value at a time. The aggregators accept any `Iterable`, so they work with generators, and internal calculations such as `sum(len(s.grades) for s in students)` use generator expressions instead of temporary lists.
+| generator expression `sum(...)` | 0.4 KB |
 
 ### Sliding a 10,000-value window over 100,000 scores
 
 | Approach | Time |
 |---|---|
-| `deque(maxlen=...)` | 3.3 ms |
-| `list` + `pop(0)` | 2221.4 ms (677x slower) |
+| `deque(maxlen=...)` | 11.0 ms |
+| `list` + `pop(0)` | 242.8 ms (22x slower) |
 
 Removing the first element of a list shifts every remaining element, which is O(n). A `deque` removes from either end in O(1), and `maxlen` does it automatically. For the default window of 3 the difference is invisible, but the `deque` stays fast at any window size.
 
